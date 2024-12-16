@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = "This text replaces the initial text.";
+      document.getElementById("myDiv").style.display = "none";
+      setTimeout(function(){document.getElementById("myDiv").style.display = "block";}, 10); // Solution: Added a small delay
+    }
+  </script>
+</body>
+</html>
